@@ -92,9 +92,9 @@ sub dump_getopt_long_more_script {
                         "Getopt::Long::More, but I got an error in eval-ing ".
                             "captured option spec: $@, raw capture: <<<$1>>>"];
         }
-        if (ref($spec) ne 'ARRAY') {
+        if (ref($spec) ne 'HASH') {
             return [500, "Script '$filename' looks like using ".
-                        "Getopt::Long::More, but I didn't get an array spec, ".
+                        "Getopt::Long::More, but I didn't get a hash spec, ".
                             "raw capture: stdout=<<$stdout>>"];
         }
     } else {
